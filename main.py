@@ -7,6 +7,7 @@ from skimage.morphology import disk
 from skimage.filters.rank import entropy
 from skimage.filters import sobel
 from skimage.filters import scharr
+from skimage.transform import resize
 from scipy import ndimage as nd
 
 img = cv2.imread('images/7.jpg')
@@ -16,13 +17,16 @@ img_label = cv2.imread('images/7l.jpg')
 scale_percent = 10
 dim = int(img.shape[1] * scale_percent / 100), int(img.shape[0] * scale_percent / 100)
 img = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
-img_label = cv2.resize(img_label, dim, interpolation=cv2.INTER_AREA)
+#img_label = cv2.resize(img_label, dim, interpolation=cv2.INTER_AREA)
+
+#resize labels without interpolation, which adds intesities we dont want
+img_label = resize(img_label, (dim[1], dim[0]), mode='edge',anti_aliasing=False, anti_aliasing_sigma=None, preserve_range=True, order=0)
 
 # opencv is BGR, separate out individual channels...
 img_red = img[:, :, 2]
 img_green = img[:, :, 1]
 img_blue = img[:, :, 0]
-img_label = img_label[:, :, 0]
+img_label = img_label[:, :, 2]
 
 # entropy filter only works on grayscale?
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -76,14 +80,17 @@ df['Scharr'] = img_scharr.reshape(-1)
 df['Sobel'] = img_sobel.reshape(-1)
 df['Gabor1'] = img_gabor_1.reshape(-1)
 df['Gabor2'] = img_gabor_2.reshape(-1)
-df['Labels'] = img_label.reshape(-1)
+labels = img_label.reshape(-1)
+
+np.digitize(labels, bins=[50, 100, 150, 200])
 
 print(df)
+print('labels are: ' + str(np.unique(labels)))
 
+hist = np.histogram(labels, bins=255)
 
-
-
-
+plt.hist(img_label)
+plt.show()
 
 cv2.waitKey()
 cv2.destroyAllWindows()
