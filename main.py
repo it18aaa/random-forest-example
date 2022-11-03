@@ -3,6 +3,7 @@ import cv2 as cv2
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pickle
 
 from skimage.morphology import disk
 from skimage.filters.rank import entropy
@@ -143,6 +144,10 @@ plt.xlabel('Predicted')
 plt.ylabel('True')
 plt.title('Confusion Matrix')
 plt.show()
+
+
+filename = "RandomForestClassifier.pkl"
+pickle.dump(model, open(filename, 'wb'))
 
 # cv2.waitKey()
 # cv2.destroyAllWindows()
