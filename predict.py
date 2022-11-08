@@ -51,9 +51,11 @@ def extract_features(img):
 
 scale_percent = 20
 
-f, axar = plt.subplots(7, 2)
+images = 4
 
-for i in range(1, 8):
+f, axar = plt.subplots(images, 2)
+
+for i in range(1, images+1):
     img = cv2.imread('images/' + str(i) + '.jpg')
     dim = int(img.shape[1] * scale_percent / 100), int(img.shape[0] * scale_percent / 100)
     image = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
@@ -62,6 +64,6 @@ for i in range(1, 8):
     shape = image[:, :, 0]
     img_segmented = prediction.reshape(shape.shape)
     axar[i - 1, 0].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-    axar[i - 1, 1].imshow(img_segmented, cmap='Spectral')
+    axar[i - 1, 1].imshow(img_segmented, cmap='jet')
 
 plt.show()
