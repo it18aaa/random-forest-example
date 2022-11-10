@@ -51,7 +51,7 @@ def extract_features(img):
 
 scale_percent = 20
 
-images = 2
+images = 8
 
 f, axar = plt.subplots(images, 2)
 
