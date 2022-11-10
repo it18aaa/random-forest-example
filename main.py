@@ -94,7 +94,8 @@ labels = img_label.reshape(-1)
 # plt.show()
 
 # this curates 'interpolated values' into their label, so
-# we have only 4 labels
+# we have only 4 labels,
+# TODO:  clean this up, maybe use label-studio and simpler cleaning method.
 labels[labels < 50] = 1
 labels[(labels >= 50) & (labels < 151)] = 2
 labels[(labels > 150) & (labels < 200)] = 3
