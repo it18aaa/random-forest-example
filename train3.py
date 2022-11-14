@@ -10,14 +10,45 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 from gabor import extract_features
 
-img = cv2.imread('images/7.jpg')
-img_label = cv2.imread('images/7l.jpg')
+
+
+# work in progress
+# load training images and masks - this should be done in array or dict
+
+img = cv2.imread('labels/8.jpg')
+img_conifer = cv2.imread('labels/conifer.png')
+img_decking = cv2.imread('labels/decking.png')
+img_grass1 = cv2.imread('label/grass1.png')
+img_grass2 = cv2.imread('label/grass2.png')
+img_house1 = cv2.imread('label/house1.png')
+img_house2 = cv2.imread('label/house2.png')
+img_house3 = cv2.imread('label/house3.png')
+img_longgrass1 = cv2.imread('label/longgrass1.png')
+img_longgrass2 = cv2.imread('label/longgrass2.png')
+img_oak1 = cv2.imread('label/oak1.png')
+img_oak2 = cv2.imread('label/oak2.png')
+img_path1 = cv2.imread('label/path1.png')
+img_path2 = cv2.imread('label/path2.png')
+img_river = cv2.imread('label/river.png')
+img_road = cv2.imread('label/road.png')
+img_roof1 = cv2.imread('label/roof1.png')
+img_roof2 = cv2.imread('label/roof2.png')
+img_roof3 = cv2.imread('label/roof3.png')
+img_trees1 = cv2.imread('label/trees1.png')
+img_trees2 = cv2.imread('label/trees2.png')
+img_trees3 = cv2.imread('label/trees3.png')
+img_vegetation1 = cv2.imread('label/vegetation1.png')
+img_vegetation2 = cv2.imread('label/vegetation2.png')
+img_vegetation3 = cv2.imread('label/vegetation3.png')
+
+
+
 
 pd.options.display.float_format = '{:,.4f}'.format
 
 
 # resize it so we can play with the image
-scale_percent = 20
+scale_percent = 40
 dim = int(img.shape[1] * scale_percent / 100), \
       int(img.shape[0] * scale_percent / 100)
 img = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
@@ -89,7 +120,7 @@ plt.title('Confusion Matrix')
 plt.show()
 
 
-filename = "RandomForestClassifier2.pkl"
+filename = "RandomForestClassifier3.pkl"
 pickle.dump(model, open(filename, 'wb'))
 
 # cv2.waitKey()

@@ -4,12 +4,12 @@ from matplotlib import pyplot as plt
 
 from gabor import extract_features
 
-filename = 'RandomForestClassifier2.pkl'
+filename = 'RandomForestClassifier3.pkl'
 model = pickle.load(open(filename, 'rb'))
 
-scale_percent = 20
+scale_percent = 40
 
-images = 8
+images = 9
 
 f, axar = plt.subplots(images, 2)
 
@@ -24,6 +24,7 @@ for i in range(1, images+1):
     img_segmented = prediction.reshape(shape.shape)
     axar[i - 1, 0].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     axar[i - 1, 1].imshow(img_segmented, cmap='jet')
+
 
     plt.imsave(fname='images/results/' + str(i) + '.png', arr=cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     plt.imsave(fname='images/results/' + str(i) + '_segmented.png',
