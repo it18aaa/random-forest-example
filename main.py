@@ -102,7 +102,7 @@ labels[(labels > 150) & (labels < 200)] = 3
 labels[labels >= 200] = 4
 
 df['Labels'] = labels
-print(df)
+
 
 print('labels are ' + str(np.unique(labels)))
 

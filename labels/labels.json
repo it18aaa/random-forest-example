@@ -1,0 +1,116 @@
+{
+  "labelled_image_name": "8.jpg",
+  "label_path": "labels/",
+ "classes" : {
+   "1": "conifer",
+   "2": "decking",
+   "3": "grass",
+   "4": "house",
+   "5": "longgrass",
+   "6": "oak",
+   "7": "path",
+   "8": "roof",
+   "9": "river",
+   "10": "road",
+   "11": "trees",
+   "12": "vegetation"
+},
+  "images": [
+     {
+       "name": "decking.png",
+       "class": 2
+    },
+    {
+       "name": "conifer.png",
+       "class": 1
+    },
+    {
+      "name": "grass1.png",
+      "class": 3
+    },
+    {
+      "name": "grass2.png",
+      "class": 3
+    },
+    {
+      "name": "house1.png",
+      "class": 4
+    },
+    {
+      "name": "house2.png",
+      "class": 4
+    },
+    {
+      "name": "house3.png",
+      "class": 4
+    },
+    {
+      "name": "longgrass1.png",
+      "class": 5
+    },
+    {
+      "name": "longgrass2.png",
+      "class": 5
+    },
+    {
+      "name": "oak1.png",
+      "class": 6
+    },
+    {
+      "name": "oak2.png",
+      "class": 6
+    },
+    {
+      "name": "path1.png",
+      "class": 7
+    },
+    {
+      "name": "path2.png",
+      "class": 7
+    },
+    {
+      "name": "river.png",
+      "class": 9
+    },
+    {
+      "name": "road.png",
+      "class": 10
+    },
+    {
+      "name": "roof1.png",
+      "class": 8
+    },
+    {
+      "name": "roof2.png",
+      "class": 8
+    },
+    {
+      "name": "roof3.png",
+      "class": 8
+    },
+    {
+      "name": "trees1.png",
+      "class": 11
+    },
+    {
+      "name": "trees2.png",
+      "class": 11
+    },
+    {
+      "name": "trees3.png",
+      "class": 11
+    },
+    {
+      "name": "vegetation1.png",
+      "class": 12
+    },
+    {
+      "name": "vegetation2.png",
+      "class": 12
+    },
+    {
+      "name": "vegetation3.png",
+      "class": 12
+    }
+  ]
+}
