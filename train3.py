@@ -16,7 +16,7 @@ from consolidate_labels import stack_labels, resize
 
 pd.options.display.float_format = '{:,.4f}'.format
 labels_json = "labels/labels.json"
-scale_percent = 50
+scale_percent = 60
 img_label, label_classes = stack_labels(labels_json, scale_percent)
 
 img_label = img_label[:, :, 2]

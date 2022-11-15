@@ -7,7 +7,7 @@ from gabor import extract_features
 filename = 'RandomForestClassifier3.pkl'
 model = pickle.load(open(filename, 'rb'))
 
-scale_percent = 50
+scale_percent = 60
 images = 13
 
 f, axar = plt.subplots(images, 2)
